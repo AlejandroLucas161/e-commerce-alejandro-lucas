@@ -42,14 +42,17 @@
 }
 
 .navbar__list {
+  flex-grow: 1;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
   margin: 0;
   padding: 0;
-  
-  list-style-type: none;
 }
 
 .navbar__list-item {
-  float: left;
 
   padding: 0 40px;
 }
