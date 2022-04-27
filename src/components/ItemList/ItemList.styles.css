@@ -1,3 +1,19 @@
+.spinner-container {
+  height: calc(100vh - 80px);
+  width: 100%;
+  text-align: center;
+}
+
+/*  */
+/*  */
+/*  */
+
+.items {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
 .item {
   flex-basis: ((25% - 30px) / 4);
 
@@ -16,8 +32,8 @@
 }
 
 .item__image-container {
-  max-width: 300px;
-  max-height: 430px;
+  width: 300px;
+  height: 450px;
 }
 
 .item__image {
@@ -34,7 +50,6 @@
   align-items: center;  
 }
 
-
 .item__info-price {
   flex-basis: 50%;
 }
@@ -42,7 +57,6 @@
 .item__info-stock {
   flex-basis: 50%;
 } 
-
 
 .item__counter {
   display: flex;

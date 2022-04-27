@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Campera Negra",
+    "price": 1200,
+    "imageUrl": "https://images.pexels.com/photos/54203/pexels-photo-54203.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "stock": 2
+  },
+  {
+    "id": 2,
+    "name": "Campera Marrón",
+    "price": 1200,
+    "imageUrl": "https://images.pexels.com/photos/6264435/pexels-photo-6264435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    "stock": 3
+  },
+  {
+    "id": 3,
+    "name": "Chaqueta de Cuero Negra",
+    "price": 1500,
+    "imageUrl": "https://images.pexels.com/photos/6667911/pexels-photo-6667911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "stock": 6
+  },
+  {
+    "id": 4,
+    "name": "Sueter Cyan",
+    "price": 700,
+    "imageUrl": "https://images.pexels.com/photos/6995704/pexels-photo-6995704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+    "stock": 0
+  }
+]
