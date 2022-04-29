@@ -1,24 +1,26 @@
 import { Fragment, useState } from 'react';
 import { BsPlusLg, BsDashLg } from 'react-icons/bs'
 
+import './ItemCount.styles.css';
+
 const ItemCount = ({ initial, stock, onAdd }) => {
   const [count, setCount] = useState(Math.min(stock, initial));
 
   const handleAddCart = () => {
     setCount(Math.min(stock, initial));
-    onAdd(count, stock);  
+    onAdd(count, stock);
   }
 
   const handleIncrementCount = () => {
-    if(count < stock) setCount(count + 1);
+    if (count < stock) setCount(count + 1);
   }
 
   const handleDecrementCount = () => {
-    if(count > initial) setCount(count - 1);
+    if (count > initial) setCount(count - 1);
   }
 
   return (
-    <Fragment>
+    <div className='item__counter-container'>
       <div className='item__counter'>
         <span className='item__counter-dec' onClick={handleDecrementCount}><BsDashLg /></span>
         <span className='item__counter-count'><b>{count}</b></span>
@@ -28,7 +30,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
       <button className='item__button' onClick={handleAddCart}>
         <b>Agregar al Carrito</b>
       </button>
-    </Fragment>
+    </div>
   )
 }
 

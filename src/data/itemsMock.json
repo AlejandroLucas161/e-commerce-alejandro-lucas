@@ -4,27 +4,31 @@
     "name": "Campera Negra",
     "price": 1200,
     "imageUrl": "https://images.pexels.com/photos/54203/pexels-photo-54203.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "stock": 2
+    "stock": 2,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis mollis ligula, ut blandit enim commodo vitae. Integer vitae libero eget purus placerat blandit. Sed et efficitur magna. Maecenas id ante arcu. Aenean ut arcu nec justo imperdiet finibus. Suspendisse."
   },
   {
     "id": 2,
     "name": "Campera Marrón",
     "price": 1200,
     "imageUrl": "https://images.pexels.com/photos/6264435/pexels-photo-6264435.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    "stock": 3
+    "stock": 3,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis mollis ligula, ut blandit enim commodo vitae. Integer vitae libero eget purus placerat blandit. Sed et efficitur magna. Maecenas id ante arcu. Aenean ut arcu nec justo imperdiet finibus. Suspendisse."
   },
   {
     "id": 3,
     "name": "Chaqueta de Cuero Negra",
     "price": 1500,
     "imageUrl": "https://images.pexels.com/photos/6667911/pexels-photo-6667911.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "stock": 6
+    "stock": 6,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis mollis ligula, ut blandit enim commodo vitae. Integer vitae libero eget purus placerat blandit. Sed et efficitur magna. Maecenas id ante arcu. Aenean ut arcu nec justo imperdiet finibus. Suspendisse."
   },
   {
     "id": 4,
     "name": "Sueter Cyan",
     "price": 700,
     "imageUrl": "https://images.pexels.com/photos/6995704/pexels-photo-6995704.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
-    "stock": 0
+    "stock": 0,
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin lobortis mollis ligula, ut blandit enim commodo vitae. Integer vitae libero eget purus placerat blandit. Sed et efficitur magna. Maecenas id ante arcu. Aenean ut arcu nec justo imperdiet finibus. Suspendisse."
   }
 ]
