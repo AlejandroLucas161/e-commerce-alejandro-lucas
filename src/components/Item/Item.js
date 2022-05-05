@@ -1,8 +1,8 @@
-import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
-const Item = ({ name, price, imageUrl, stock }) => {
+const Item = ({ name, price, imageUrl, stock, id }) => {
   return (
-    <Fragment>
+    <Link to={`/item/${id}`} key={id} className='item'>
       <div className='item__image-container'>
         <img src={imageUrl} alt={name} className='item__image' />
       </div>
@@ -13,7 +13,7 @@ const Item = ({ name, price, imageUrl, stock }) => {
         <span className='item__info-price'>Precio: <b>${price}</b></span>
         <span className='item__info-stock'>Stock: <b>{stock}</b></span>
       </div>
-    </Fragment>
+    </Link>
   )
 }
 

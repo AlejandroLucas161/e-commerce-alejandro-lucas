@@ -1,5 +1,7 @@
 import CartWidget from '../CartWidget/CartWidget';
 
+import { NavLink } from 'react-router-dom';
+
 import './NavBar.styles.css';
 
 const NavBar = () => {
@@ -7,22 +9,28 @@ const NavBar = () => {
     <header className='navbar'>
       <div className='navbar-content'>
         <div className='navbar__logo'>
-          <a href='#'>
-            Clothy!
-          </a>  
-        </div>  
+          <NavLink to={'/'}>
+            <span>Clothy!</span>
+          </NavLink>
+        </div>
 
         <ul className='navbar__list'>
           <li className='navbar__list-item'>
-            <a href='#'>Home</a>
+            <NavLink to={'/'} className={({ isActive }) => isActive ? 'active-link' : undefined}>
+              <span>Inicio</span>
+            </NavLink>
           </li>
 
           <li className='navbar__list-item'>
-            <a href='#'>Adults</a>
+            <NavLink to={'/category/adults'} className={({ isActive }) => isActive ? 'active-link' : undefined}>
+              <span>Adultos</span>
+            </NavLink>
           </li>
 
           <li className='navbar__list-item'>
-            <a href='#'>Kids</a>
+            <NavLink to={'/category/kids'} className={({ isActive }) => isActive ? 'active-link' : undefined}>
+              <span>Niños</span>
+            </NavLink>
           </li>
         </ul>
 
