@@ -1,12 +1,11 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({ item: { name, price, imageUrl, stock } }) => {
+  const [quantItems, setQuantItems] = useState(null);
 
-  const onAdd = (count, stock) => {
-    if (stock === 0) return alert(`No tenemos stock en estos momentos, vuelve en unos días.`);
-
-    return alert(`${count} ${count === 1 ? 'Producto agregado' : 'Productos agregados'} al carrito!`);
-  };
+  const onAdd = (quantToAdd) => setQuantItems(quantToAdd);
 
   return (
     <div className='item-detail'>
@@ -22,7 +21,15 @@ const ItemDetail = ({ item: { name, price, imageUrl, stock } }) => {
           <span className="item-detail__content-info-stock">Stock: <b>{stock}</b></span>
         </div>
 
-        <ItemCount initial={1} stock={stock} onAdd={onAdd} />
+        {quantItems ? (
+          <button className="item__button">
+            <Link to={'/cart'}>
+              <b>Finalizar Compra ({quantItems})</b>
+            </Link>
+          </button>
+        ) : (
+          <ItemCount initial={1} stock={stock} onAdd={onAdd} />
+        )}
       </div>
     </div>
   )

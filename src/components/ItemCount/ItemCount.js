@@ -6,9 +6,9 @@ import './ItemCount.styles.css';
 const ItemCount = ({ initial, stock, onAdd }) => {
   const [count, setCount] = useState(Math.min(stock, initial));
 
-  const handleAddCart = () => {
+  const handleAddToCart = () => {
+    onAdd(count);
     setCount(Math.min(stock, initial));
-    onAdd(count, stock);
   }
 
   const handleIncrementCount = () => {
@@ -27,7 +27,7 @@ const ItemCount = ({ initial, stock, onAdd }) => {
         <span className='item__counter-inc' onClick={handleIncrementCount}><BsPlusLg /></span>
       </div>
 
-      <button className='item__button' onClick={handleAddCart}>
+      <button className='item__button' onClick={handleAddToCart}>
         <b>Agregar al Carrito</b>
       </button>
     </div>
