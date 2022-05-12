@@ -1,4 +1,4 @@
-import { Fragment, useState } from 'react';
+import { useState } from 'react';
 import { BsPlusLg, BsDashLg } from 'react-icons/bs'
 
 import './ItemCount.styles.css';

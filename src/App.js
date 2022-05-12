@@ -1,5 +1,4 @@
 import NavBar from './components/NavBar/NavBar';
-import itemsMock from './data/itemsMock.json'
 import ItemListContainer from './pages/ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './pages/ItemDetailContainer/ItemDetailContainer';
 import Cart from './pages/Cart/Cart';
@@ -7,8 +6,6 @@ import Cart from './pages/Cart/Cart';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
-  console.log(itemsMock);
-
   return (
     <div className="App">
       <NavBar />

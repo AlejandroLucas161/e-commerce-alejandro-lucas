@@ -28,8 +28,6 @@ const ItemDetailContainer = () => {
       .catch(err => console.log(err))
   }, [id])
 
-  console.log(item);
-
   return (
     isLoading ? (
       <div className='spinner-container'>
