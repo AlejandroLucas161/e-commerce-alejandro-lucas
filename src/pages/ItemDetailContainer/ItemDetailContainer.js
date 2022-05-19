@@ -1,44 +1,44 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import itemsMock from '../../data/itemsMock.json';
-import ItemDetail from '../../components/ItemDetail/ItemDetail';
-import spinner from '../../assets/spinner/spinner.svg';
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { doc, getDoc, getFirestore } from "firebase/firestore";
+import ItemDetail from "../../components/ItemDetail/ItemDetail";
+import spinner from "../../assets/spinner/spinner.svg";
 
-import './ItemDetailContainer.styles.css';
+import "./ItemDetailContainer.styles.css";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
   const [item, setItem] = useState({});
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
-  const getItem = (id) => {
+  const getItem = id => {
     setIsLoading(true);
 
-    return new Promise((resolve, reject) => {
-      setTimeout(() => resolve(itemsMock.find(item => item.id === id)), 2000)
-    })
-  }
+    const db = getFirestore();
+
+    const itemRef = doc(db, "items", id);
+
+    return getDoc(itemRef);
+  };
 
   useEffect(() => {
-    getItem(+id)
-      .then(res => {
-        setItem(res)
-        setIsLoading(false)
+    getItem(id)
+      .then(snapshot => {
+        setItem({ ...snapshot.data(), id: snapshot.id });
+        setIsLoading(false);
       })
-      .catch(err => console.log(err))
-  }, [id])
+      .catch(err => console.log(err));
+  }, [id]);
 
-  return (
-    isLoading ? (
-      <div className='spinner-container'>
-        <img src={spinner} alt="Loading spinner" />
-      </div>
-    ) : (
-      <div className='item-detail-container'>
-        <ItemDetail item={item} />
-      </div>
-    )
-  )
-}
+  return isLoading ? (
+    <div className="spinner-container">
+      <img src={spinner} alt="Loading spinner" />
+    </div>
+  ) : (
+    <div className="item-detail-container">
+      <ItemDetail item={item} />
+    </div>
+  );
+};
 
 export default ItemDetailContainer;

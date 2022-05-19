@@ -1,8 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-// import { collection, getDocs, getFirestore } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  getFirestore,
+  query,
+  where,
+} from "firebase/firestore";
 
-import itemsMock from "../../data/itemsMock.json";
 import ItemList from "../../components/ItemList/ItemList";
 import spinner from "../../assets/spinner/spinner.svg";
 
@@ -17,34 +22,20 @@ const ItemListContainer = () => {
   const getItems = categoryId => {
     setIsLoading(true);
 
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(
-          categoryId
-            ? itemsMock.filter(item => item.category === categoryId)
-            : itemsMock
-        );
-      }, 2000);
-    });
+    const db = getFirestore();
+
+    const itemsCollection = collection(db, "items");
+
+    const q =
+      categoryId && query(itemsCollection, where("category", "==", categoryId));
+
+    return getDocs(q || itemsCollection);
   };
-
-  // useEffect(() => {
-  //   const db = getFirestore();
-
-  //   const itemsCollection = collection(db, "items");
-  //   getDocs(itemsCollection).then(snapshot => {
-  //     console.log(
-  //       snapshot.docs.map(doc => {
-  //         return { ...doc.data(), id: doc.id };
-  //       })
-  //     );
-  //   });
-  // }, []);
 
   useEffect(() => {
     getItems(categoryId)
-      .then(res => {
-        setItems(res);
+      .then(snapshot => {
+        setItems(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })));
         setIsLoading(false);
       })
       .catch(err => console.log(err));
