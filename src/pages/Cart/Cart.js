@@ -13,8 +13,11 @@ const Cart = () => {
       ))}
       {cartList.length ? (
         <Fragment>
-          <button onClick={clearCart}>Vaciar Carrito</button>
           <h2>${totalPrice()}</h2>
+          <button onClick={clearCart}>Vaciar Carrito</button>
+          <button>
+            <Link to={"/checkout"}>Finalizar Compra</Link>
+          </button>
         </Fragment>
       ) : (
         <Fragment>
