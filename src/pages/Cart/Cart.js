@@ -1,33 +1,40 @@
 import { Fragment } from "react";
 import { Link } from "react-router-dom";
-import CartItem from "../../components/CartItem/CartItem";
 import { useCartContext } from "../../store/CartContextProvider";
+import CartItem from "../../components/CartItem/CartItem";
+import "./Cart.styles.css";
 
 const Cart = () => {
   const { cartList, clearCart, totalPrice } = useCartContext();
 
   return (
-    <div>
-      {cartList.map(item => (
-        <CartItem item={item} key={item.id} />
-      ))}
-      {cartList.length ? (
-        <Fragment>
-          <h2>${totalPrice()}</h2>
-          <button onClick={clearCart}>Vaciar Carrito</button>
-          <button>
-            <Link to={"/checkout"}>Finalizar Compra</Link>
-          </button>
-        </Fragment>
-      ) : (
-        <Fragment>
-          <h2>El carrito esta vacio</h2>
-          <button>
-            <Link to={"/"}>Agrega algo</Link>
-          </button>
-        </Fragment>
-      )}
-    </div>
+    <Fragment>
+      <div className="cart">
+        {cartList.map((item) => (
+          <CartItem item={item} key={item.id} />
+        ))}
+        {cartList.length ? (
+          <div className="cart-footer">
+            <span className="cart-footer__total">Total: ${totalPrice()}</span>
+            <button className="cart-footer__clear" onClick={clearCart}>
+              Vaciar Carrito
+            </button>
+            <button className="btn-util">
+              <Link to={"/checkout"}>Finalizar Compra</Link>
+            </button>
+          </div>
+        ) : (
+          <div className="cart-empty-container">
+            <div className="cart-empty">
+              <h2 className="cart-empty__message">El carrito esta vacío</h2>
+              <button className="btn-util">
+                <Link to={"/"}>Volver al Inicio</Link>
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
+    </Fragment>
   );
 };
 

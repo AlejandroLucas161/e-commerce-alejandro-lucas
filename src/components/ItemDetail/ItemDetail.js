@@ -9,7 +9,7 @@ const ItemDetail = ({ item }) => {
   const [quantItems, setQuantItems] = useState(null);
   const { addItem } = useCartContext();
 
-  const onAdd = quantToAdd => {
+  const onAdd = (quantToAdd) => {
     setQuantItems(quantToAdd);
     addItem(item, quantToAdd);
   };
@@ -25,7 +25,7 @@ const ItemDetail = ({ item }) => {
 
         <div className="item-detail__content-info">
           <span className="item-detail__content-info-price">
-            Precio: <b>{price}</b>
+            Precio: <b>${price}</b>
           </span>
           <span className="item-detail__content-info-stock">
             Stock: <b>{stock}</b>
@@ -33,7 +33,7 @@ const ItemDetail = ({ item }) => {
         </div>
 
         {quantItems ? (
-          <button className="item__button">
+          <button className="btn-util">
             <Link to={"/cart"}>
               <b>Finalizar Compra ({quantItems})</b>
             </Link>

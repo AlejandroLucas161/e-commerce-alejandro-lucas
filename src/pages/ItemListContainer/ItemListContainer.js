@@ -19,7 +19,7 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getItems = categoryId => {
+  const getItems = (categoryId) => {
     setIsLoading(true);
 
     const db = getFirestore();
@@ -34,11 +34,11 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     getItems(categoryId)
-      .then(snapshot => {
-        setItems(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id })));
+      .then((snapshot) => {
+        setItems(snapshot.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         setIsLoading(false);
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }, [categoryId]);
 
   return (

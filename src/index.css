@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap");
 
 * {
   margin: 0;
@@ -6,8 +6,8 @@
   box-sizing: border-box;
   text-decoration: none;
   list-style-type: none;
-  font-family: 'Lato', sans-serif;
-  color: #393E46;
+  font-family: "Lato", sans-serif;
+  color: #393e46;
 }
 
 .App {
@@ -21,4 +21,23 @@
   align-items: center;
 
   height: calc(100vh - 160px);
+}
+
+.btn-util {
+  padding: 8px;
+
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+  box-shadow: 0 0 5px #ccc;
+  background-color: #eeeeee;
+
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 300ms;
+}
+
+.btn-util:hover {
+  background-color: #aad8d3;
 }

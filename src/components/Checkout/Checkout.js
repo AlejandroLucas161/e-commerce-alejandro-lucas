@@ -1,8 +1,10 @@
 import { Fragment, useState } from "react";
 import { useCartContext } from "../../store/CartContextProvider";
 import { collection, addDoc, getFirestore } from "firebase/firestore";
-import spinner from "../../assets/spinner/spinner.svg";
 import { Link } from "react-router-dom";
+import spinner from "../../assets/spinner/spinner.svg";
+
+import "./Checkout.styles.css";
 
 const Checkout = () => {
   const { cartList, totalPrice, clearCart } = useCartContext();
@@ -54,8 +56,7 @@ const Checkout = () => {
   };
 
   return (
-    <Fragment>
-      <h1>Finalizando Compra</h1>
+    <div className="checkout">
       {isLoading ? (
         <div className="spinner-container">
           <img src={spinner} alt="Loading spinner" />
@@ -63,50 +64,61 @@ const Checkout = () => {
       ) : (
         !orderId && (
           <Fragment>
-            <h4>Completar Datos:</h4>
+            <h1>Finalizando Compra</h1>
+            <div className="checkout-form__container">
+              <h3>Completar Datos:</h3>
 
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="name"
-                placeholder="Nombre"
-                value={name}
-                onChange={handleInputChange}
-                required
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                value={email}
-                onChange={handleInputChange}
-                required
-              />
-              <input
-                type="number"
-                name="phone"
-                placeholder="Telefono"
-                value={phone}
-                onChange={handleInputChange}
-                required
-              />
-              <input type="submit" value="Finalizar Compra" />
-            </form>
+              <form className="checkout-form" onSubmit={handleSubmit}>
+                <input
+                  className="checkout-form__input"
+                  type="text"
+                  name="name"
+                  placeholder="Nombre"
+                  value={name}
+                  onChange={handleInputChange}
+                  required
+                />
+                <input
+                  className="checkout-form__input"
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  value={email}
+                  onChange={handleInputChange}
+                  required
+                />
+                <input
+                  className="checkout-form__input"
+                  type="number"
+                  name="phone"
+                  placeholder="Telefono"
+                  value={phone}
+                  onChange={handleInputChange}
+                  required
+                />
+                <input
+                  className="btn-util"
+                  type="submit"
+                  value="Finalizar Compra"
+                />
+              </form>
+            </div>
           </Fragment>
         )
       )}
       {orderId && (
-        <div>
+        <div className="checkout-finished">
           <h1>Compra finalizada con éxito</h1>
-          <h4>{`Código de compra: ${orderId}`}</h4>
-          <button>
+          <span className="checkout-finished__code">
+            <b>Código de compra:</b> {`${orderId}`}
+          </span>
+          <button className="btn-util">
             <Link to={"/"}>Volver al Inicio</Link>
           </button>
         </div>
       )}
-    </Fragment>
+    </div>
   );
 };
 
 export default Checkout;
-// { buyer: { name, phone, email }, items: [{ id, title, price, amount }], date, total  }

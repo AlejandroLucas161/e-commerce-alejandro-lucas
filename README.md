@@ -1,7 +1,9 @@
-# *Clothy!* (e-commerce - Alejandro Lucas)
+# _Clothy!_ (e-commerce - Alejandro Lucas)
+
 Proyecto e-commerce en progreso desarrollado en **React JS** (Proyecto Final para curso de **React** en **CoderHouse**)
 
 ## Instalación Zip
+
 Pueden descargar el repositorio en formato zip
 
 - Ir a "Code" -> "Dowload Zip"
@@ -20,7 +22,8 @@ npm install
 npm start
 ```
 
-## Instalación Git Glone
+## Instalación Git Clone
+
 Otra manera de acceder al proyecto es clonarlo, ejecutando en la consola:
 
 ```
@@ -35,13 +38,14 @@ npm install
 npm start
 ```
 
-
 ## Dependencias del Proyecto
+
 - axios
 - react-icons
 - react-router-dom
 
 ## Desarrollado con
+
 - <img src="https://cdn.iconscout.com/icon/free/png-256/react-1-282599.png" alt="react" width="20" height="20"/> React
 
 - <img src="https://kreango.com/assets/images/frameworks/back-js.png" alt="javascript" width="25" height="25"/> JavaScript
@@ -50,6 +54,6 @@ npm start
 
 - <img src="https://cdn-icons-png.flaticon.com/512/732/732190.png" alt="css" width="25" height="25"/> CSS
 
-## Clothy! Demo 
+## Clothy! Demo
 
-![Demo Gif](public/clothy.gif)
+![Demo Gif](public/Clothy.gif)

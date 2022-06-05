@@ -11,7 +11,7 @@ const ItemDetailContainer = () => {
   const [item, setItem] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
-  const getItem = id => {
+  const getItem = (id) => {
     setIsLoading(true);
 
     const db = getFirestore();
@@ -23,11 +23,11 @@ const ItemDetailContainer = () => {
 
   useEffect(() => {
     getItem(id)
-      .then(snapshot => {
+      .then((snapshot) => {
         setItem({ ...snapshot.data(), id: snapshot.id });
         setIsLoading(false);
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }, [id]);
 
   return isLoading ? (

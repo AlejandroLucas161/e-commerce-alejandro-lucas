@@ -18,13 +18,13 @@
 .item__counter-dec,
 .item__counter-inc {
   cursor: pointer;
-  background-color: #EEEEEE;
+  background-color: #eeeeee;
   transition: 300ms;
 }
 
 .item__counter-dec:hover,
 .item__counter-inc:hover {
-  background-color: #AAD8D3;
+  background-color: #aad8d3;
 }
 
 .item__counter-dec,
@@ -54,20 +54,4 @@
 
 .item__button {
   width: 100%;
-
-  padding: 8px;
-
-  font-size: 16px;
-  border-radius: 4px;
-  box-shadow: 0 0 5px #ccc;
-  background-color: #EEEEEE;
-
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: 300ms;
-}
-
-.item__button:hover {
-  background-color: #AAD8D3;
 }
