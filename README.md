@@ -56,4 +56,4 @@ npm start
 
 ## Clothy! Demo
 
-![Demo Gif](public/Clothy.gif)
+![Demo Gif](public/clothy.gif)
